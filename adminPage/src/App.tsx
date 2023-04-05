@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './Layout'
-import ProductsList from './routes/productsList'
+import ProductsList from './routes/ProductsList'
 
 function App() {
 

@@ -7,57 +7,50 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import { Outlet } from 'react-router-dom';
 import HeaderTitle from './components/HeaderTitle';
-import Button from '@mui/material/Button';
 import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@mui/styles';
+import stylesComponents from './styles/stylesComponents'
 
-const drawerWidth = 240;
+const useStyles = makeStyles({
+  boddy: stylesComponents.boddy,
+  toolBar: stylesComponents.toolBar
+});
 
 
 const Layout = () => {
+  const classes = useStyles();
 
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Toolbar>
+        <Toolbar className={classes.toolBar}>
           <Typography variant="h6" noWrap component="div">
             <HeaderTitle />
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
-        }}
-      >
+      <Drawer variant="permanent" sx={{ width: 240, flexShrink: 0, [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box' }, }}>
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List>
             <ListItemButton>
-              <Button variant="text" color="primary" component={Link} to="/">
-                Products
-              </Button>
+              <Link to="/"><ListItemText primary="Products" /></Link>
             </ListItemButton>
             <ListItemButton>
-              <Button variant="text" color="primary" component={Link} to="company-profile">
-                Company Profile
-              </Button>
+              <Link to="company-profile"><ListItemText primary="Company profile" /></Link>
             </ListItemButton>
             <ListItemButton>
-              <Button variant="text" color="primary" component={Link} to="company-profile">
-                Logout
-              </Button>
+              <Link to="/"><ListItemText primary="Logout" /></Link>
             </ListItemButton>
           </List>
         </Box>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }} className={classes.boddy}>
         <Toolbar />
-        <Typography paragraph>
+        <Typography paragraph className={classes.boddy}>
           <Outlet />
         </Typography>
       </Box>

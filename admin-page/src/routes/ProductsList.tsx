@@ -31,6 +31,7 @@ export interface DialogTitleProps {
   onClose: () => void;
 }
 
+//Dialog modal
 function BootstrapDialogTitle(props: DialogTitleProps) {
   const { children, onClose, ...other } = props;
 
@@ -69,6 +70,7 @@ const ProductsList = () => {
 
   const classes = useStyles();
 
+  //Open and close modal
   const handleOpen = () => {
     setEditIndex(null);
     setOpen(true);
@@ -116,10 +118,12 @@ const ProductsList = () => {
     localStorage.setItem('productsList', JSON.stringify(newList));
   };
 
+  //change title
   useEffect(() => {
     document.title = 'Products';
   }, []);
 
+  //Get items from localstorage
   useEffect(() => {
     const storedList = localStorage.getItem('productsList');
     if (storedList) {

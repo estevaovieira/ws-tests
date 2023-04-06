@@ -77,6 +77,8 @@ const ProductsList = () => {
   };
 
   const handleClose = () => {
+    setProduct('')
+    setValue('')
     setOpen(false);
   };
 

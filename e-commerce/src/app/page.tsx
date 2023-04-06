@@ -1,9 +1,12 @@
-import styles from '../styles/page.module.css'
+import { Inter } from 'next/font/google'
+import styles from './page.module.css'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  return(
-    <div className={styles.container}>
-      <h1>TESTE</h1>
-    </div>
+  return (
+    <main className={styles.main}>
+      
+    </main>
   )
-};
+}

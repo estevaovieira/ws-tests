@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import { Button, TextField } from '@mui/material';
 import stylesComponents from '../styles/stylesComponents';
 import DeleteIcon from '@mui/icons-material/Delete';
+import AddIcon from '@mui/icons-material/Add';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -61,7 +62,6 @@ const useStyles = makeStyles({
 const ProductsList = () => {
   const classes = useStyles();
 
-  //Modal
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -74,11 +74,20 @@ const ProductsList = () => {
   const [product, setProduct] = useState('');
   const [value, setValue] = useState('');
   const [list, setList] = useState<ListItem[]>([]);
+  const [editIndex, setEditIndex] = useState<number | null>(null);
 
   const handleAdd = () => {
     if (product && value) {
       const newObj = { product, value };
-      const newList = [...list, newObj];
+      let newList: ListItem[];
+
+      if (editIndex !== null) {
+        newList = [...list];
+        newList[editIndex] = newObj;
+      } else {
+        newList = [...list, newObj];
+      }
+
       setList(newList);
       localStorage.setItem('productsList', JSON.stringify(newList));
       setProduct('');
@@ -89,19 +98,12 @@ const ProductsList = () => {
     }
   };
 
-  //Edit the product
+  // //Edit the product
   const handleEdit = (index: number) => {
-    const newProduct = prompt('Enter the new product name:') || '';
-    const newValue = prompt('Enter the new value:') || '';
-
-    if (newProduct && newValue) {
-      const newList = [...list];
-      newList[index] = { product: newProduct, value: newValue };
-      setList(newList);
-      localStorage.setItem('productsList', JSON.stringify(newList));
-    } else {
-      alert('Please fill in all fields.');
-    }
+    setEditIndex(index);
+    setProduct(list[index].product);
+    setValue(list[index].value);
+    setOpen(true);
   };
 
   //Delete the product
@@ -123,17 +125,17 @@ const ProductsList = () => {
   return (
     <>
       <h2 className={classes.titleProducts}>List of products</h2>
-      <Button variant="contained" onClick={handleOpen}>+ New</Button>
+      <Button variant="contained" onClick={handleOpen} startIcon={<AddIcon />}>New</Button>
       <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
         <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-          New Product
+          {editIndex !== null ? 'Edit Product' : 'New Product'}
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
-            <TextField id="standard-basic" label="Product" variant="standard" value={product} onChange={e => setProduct(e.target.value)} />
+            <TextField id="standard-basic" label="Product" variant="standard" value={product} onChange={(e) => setProduct(e.target.value)} />
           </Typography>
           <Typography gutterBottom>
-            <TextField id="standard-basic" label="Value" variant="standard" value={value} onChange={e => setValue(e.target.value)} />
+            <TextField id="standard-basic" label="Value" variant="standard" value={value} onChange={(e) => setValue(e.target.value)} />
           </Typography>
         </DialogContent>
         <DialogActions>
@@ -158,10 +160,10 @@ const ProductsList = () => {
                 <TableCell component="th" scope="row">
                   {item.product}
                 </TableCell>
-                <TableCell align="right">{item.value}</TableCell>
+                <TableCell align="right">$ {item.value}</TableCell>
                 <TableCell align="right">
                   <Button variant="contained" onClick={() => handleEdit(index)}>EDIT</Button>
-                  <Button variant="contained" style={{marginLeft: '5px'}} onClick={() => handleDelete(index)}><DeleteIcon /></Button>
+                  <Button variant="contained" style={{ marginLeft: '5px' }} onClick={() => handleDelete(index)}><DeleteIcon /></Button>
                 </TableCell>
               </TableRow>
             ))}

@@ -19,6 +19,14 @@ const stylesComponents = {
 
   toolBar: {
     backgroundColor: 'rgb(6, 0, 39, 0.7)',
+  },
+
+  list: {
+    backgroundColor: 'rgb(15, 1, 92)'
+  },
+
+  routeSelect: {
+    color: '#fff',
   }
 
 }

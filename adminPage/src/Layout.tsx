@@ -15,7 +15,9 @@ import stylesComponents from './styles/stylesComponents'
 
 const useStyles = makeStyles({
   boddy: stylesComponents.boddy,
-  toolBar: stylesComponents.toolBar
+  toolBar: stylesComponents.toolBar,
+  listRoutes: stylesComponents.list,
+  routeSelect: stylesComponents.routeSelect
 });
 
 
@@ -32,18 +34,18 @@ const Layout = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" sx={{ width: 240, flexShrink: 0, [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box' }, }}>
+      <Drawer variant="permanent" sx={{ width: 240, flexShrink: 0, [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box', backgroundColor: 'rgb(15, 1, 92)'}}}>
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
-          <List>
+          <List className={classes.listRoutes}>
             <ListItemButton>
-              <Link to="/"><ListItemText primary="Products" /></Link>
+              <Link to="/" className={classes.routeSelect}><ListItemText primary="Products" /></Link>
             </ListItemButton>
             <ListItemButton>
-              <Link to="company-profile"><ListItemText primary="Company profile" /></Link>
+              <Link to="company-profile" className={classes.routeSelect}><ListItemText primary="Company profile" /></Link>
             </ListItemButton>
             <ListItemButton>
-              <Link to="/"><ListItemText primary="Logout" /></Link>
+              <Link to="/" className={classes.routeSelect}><ListItemText primary="Logout" /></Link>
             </ListItemButton>
           </List>
         </Box>

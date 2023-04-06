@@ -61,26 +61,24 @@ const useStyles = makeStyles({
 });
 
 const ProductsList = () => {
+  const [product, setProduct] = useState('');
+  const [value, setValue] = useState('');
+  const [list, setList] = useState<ListItem[]>([]);
+  const [editIndex, setEditIndex] = useState<number | null>(null);
+  const [open, setOpen] = useState(false);
+
   const classes = useStyles();
 
-  useEffect(() => {
-    document.title = 'Products';
-  }, []);
-
-  const [open, setOpen] = useState(false);
   const handleOpen = () => {
+    setEditIndex(null);
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
 
   //Create products in LocalStorage
-  const [product, setProduct] = useState('');
-  const [value, setValue] = useState('');
-  const [list, setList] = useState<ListItem[]>([]);
-  const [editIndex, setEditIndex] = useState<number | null>(null);
-
   const handleAdd = () => {
     if (product && value) {
       const newObj = { product, value };
@@ -118,6 +116,9 @@ const ProductsList = () => {
     localStorage.setItem('productsList', JSON.stringify(newList));
   };
 
+  useEffect(() => {
+    document.title = 'Products';
+  }, []);
 
   useEffect(() => {
     const storedList = localStorage.getItem('productsList');

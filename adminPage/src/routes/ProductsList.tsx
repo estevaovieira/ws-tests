@@ -11,13 +11,14 @@ import { Button, TextField } from '@mui/material';
 import stylesComponents from '../styles/stylesComponents';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
+import EditIcon from '@mui/icons-material/Edit';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
 interface ListItem {
   product: string;
@@ -142,13 +143,13 @@ const ProductsList = () => {
           <Button variant="contained" onClick={handleAdd}>To add</Button>
         </DialogActions>
       </Dialog>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} style={{width: '1300px', marginLeft: 'auto', marginRight: 'auto'}}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>PRODUCT</TableCell>
-              <TableCell align="right">VALUE</TableCell>
-              <TableCell align="right">ACTION</TableCell>
+              <TableCell style={{fontWeight: 'bold'}}>PRODUCT</TableCell>
+              <TableCell align="right" style={{fontWeight: 'bold'}}>VALUE</TableCell>
+              <TableCell align="right" style={{fontWeight: 'bold'}}>ACTION</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -162,8 +163,8 @@ const ProductsList = () => {
                 </TableCell>
                 <TableCell align="right">$ {item.value}</TableCell>
                 <TableCell align="right">
-                  <Button variant="contained" onClick={() => handleEdit(index)}>EDIT</Button>
-                  <Button variant="contained" style={{ marginLeft: '5px' }} onClick={() => handleDelete(index)}><DeleteIcon /></Button>
+                  <IconButton onClick={() => handleEdit(index)}><EditIcon /></IconButton>
+                  <IconButton style={{ marginLeft: '5px' }} onClick={() => handleDelete(index)}><DeleteIcon /></IconButton>
                 </TableCell>
               </TableRow>
             ))}

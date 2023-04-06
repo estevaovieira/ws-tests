@@ -7,11 +7,16 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import { Outlet } from 'react-router-dom';
 import HeaderTitle from './components/HeaderTitle';
+import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import stylesComponents from './styles/stylesComponents'
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const useStyles = makeStyles({
   boddy: stylesComponents.boddy,
@@ -19,6 +24,8 @@ const useStyles = makeStyles({
   listRoutes: stylesComponents.list,
   routeSelect: stylesComponents.routeSelect
 });
+
+const whiteColor = {color: '#fff'};
 
 
 const Layout = () => {
@@ -38,15 +45,30 @@ const Layout = () => {
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List className={classes.listRoutes}>
-            <ListItemButton>
-              <Link to="/" className={classes.routeSelect}><ListItemText primary="Products" /></Link>
-            </ListItemButton>
-            <ListItemButton>
-              <Link to="company-profile" className={classes.routeSelect}><ListItemText primary="Company profile" /></Link>
-            </ListItemButton>
-            <ListItemButton>
-              <Link to="/" className={classes.routeSelect}><ListItemText primary="Logout" /></Link>
-            </ListItemButton>
+            <ListItem disablePadding style={whiteColor}>
+              <ListItemButton component={Link} to="/">
+                <ListItemIcon>
+                  <ShoppingCartIcon style={whiteColor}/>
+                </ListItemIcon>
+                <ListItemText primary="Products" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding style={whiteColor}>
+              <ListItemButton component={Link} to="/company-profile">
+                <ListItemIcon>
+                  <AccountBoxIcon style={whiteColor}/>
+                </ListItemIcon>
+                <ListItemText primary="Company profile" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding style={whiteColor}>
+              <ListItemButton component={Link} to="/sua-rota-aqui">
+                <ListItemIcon>
+                  <LogoutIcon style={whiteColor}/>
+                </ListItemIcon>
+                <ListItemText primary="Logout" />
+              </ListItemButton>
+            </ListItem>
           </List>
         </Box>
       </Drawer>
@@ -61,3 +83,19 @@ const Layout = () => {
 }
 
 export default Layout
+
+{/* <ListItemButton>
+              <ListItemText primary="Products" className={classes.routeSelect}>
+                <Link to="/"><Button size="large">Products</Button></Link>
+              </ListItemText>
+            </ListItemButton>
+            <ListItemButton>
+              <ListItemText primary="Company profile" className={classes.routeSelect}>
+                <Link to="company-profile"><Button size="large">Company profile</Button></Link>
+              </ListItemText>
+            </ListItemButton>
+            <ListItemButton>
+              <ListItemText primary="Logout" className={classes.routeSelect}>
+                <Link to="/"><Button size="large">Logout</Button></Link>
+              </ListItemText>
+            </ListItemButton> */}

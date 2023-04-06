@@ -6,9 +6,7 @@ const stylesComponents = {
   titlesBoddy: {
     color: '#fff',
     display: 'inline-block',
-    marginRight: '30px',
-    marginLeft: '70px',
-    marginBottom: '50px',
+    margin: '80px 30px 30px 147px',
     borderBottom: '3px solid #fff',
     fontSize: '18px'
   },

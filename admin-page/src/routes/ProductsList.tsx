@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { makeStyles, styled } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -62,6 +62,10 @@ const useStyles = makeStyles({
 
 const ProductsList = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    document.title = 'Products';
+  }, []);
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => {

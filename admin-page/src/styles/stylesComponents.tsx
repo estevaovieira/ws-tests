@@ -25,7 +25,7 @@ const stylesComponents = {
 
   routeSelect: {
     color: '#fff',
-  }
+  },
 
 }
 

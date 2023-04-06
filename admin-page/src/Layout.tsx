@@ -46,7 +46,7 @@ const Layout = () => {
         <Box sx={{ overflow: 'auto' }}>
           <List className={classes.listRoutes}>
             <ListItem disablePadding style={whiteColor}>
-              <ListItemButton component={Link} to="/">
+              <ListItemButton component={Link} to="/products">
                 <ListItemIcon>
                   <ShoppingCartIcon style={whiteColor}/>
                 </ListItemIcon>
@@ -62,7 +62,7 @@ const Layout = () => {
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding style={whiteColor}>
-              <ListItemButton component={Link} to="/sua-rota-aqui">
+              <ListItemButton component={Link} to="/login">
                 <ListItemIcon>
                   <LogoutIcon style={whiteColor}/>
                 </ListItemIcon>
@@ -83,19 +83,3 @@ const Layout = () => {
 }
 
 export default Layout
-
-{/* <ListItemButton>
-              <ListItemText primary="Products" className={classes.routeSelect}>
-                <Link to="/"><Button size="large">Products</Button></Link>
-              </ListItemText>
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemText primary="Company profile" className={classes.routeSelect}>
-                <Link to="company-profile"><Button size="large">Company profile</Button></Link>
-              </ListItemText>
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemText primary="Logout" className={classes.routeSelect}>
-                <Link to="/"><Button size="large">Logout</Button></Link>
-              </ListItemText>
-            </ListItemButton> */}

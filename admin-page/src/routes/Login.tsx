@@ -19,7 +19,7 @@ const Login = () => {
 
   const check = () => {
     if (user && password) {
-      navigate('/products')
+      navigate('/')
     } return
 
   }

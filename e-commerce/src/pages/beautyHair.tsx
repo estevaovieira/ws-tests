@@ -1,5 +1,9 @@
+import styles from '../styles/global.module.css'
+
 export default function BeautyHair() {
   return (
-    <h1>Beauty & Hair</h1>
+    <div className={styles.container}>
+
+    </div>
   )
 }

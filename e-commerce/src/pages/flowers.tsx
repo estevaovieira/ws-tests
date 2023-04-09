@@ -1,5 +1,9 @@
+import styles from '../styles/global.module.css'
+
 export default function Flowers() {
   return (
-    <h1>Flowers</h1>
+    <div className={styles.container}>
+
+    </div>
   )
 }

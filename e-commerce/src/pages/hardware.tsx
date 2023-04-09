@@ -1,5 +1,9 @@
+import styles from '../styles/global.module.css'
+
 export default function Hardware() {
   return (
-    <h1>Hardware</h1>
+    <div className={styles.container}>
+
+    </div>
   )
 }

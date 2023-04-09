@@ -1,5 +1,9 @@
+import styles from '../styles/global.module.css'
+
 export default function Pet() {
   return (
-    <h1>Pet</h1>
+    <div className={styles.container}>
+
+    </div>
   )
 }

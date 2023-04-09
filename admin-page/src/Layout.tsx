@@ -46,7 +46,7 @@ const Layout = () => {
         <Box sx={{ overflow: 'auto' }}>
           <List className={classes.listRoutes}>
             <ListItem disablePadding style={whiteColor}>
-              <ListItemButton component={Link} to="/products">
+              <ListItemButton component={Link} to="/">
                 <ListItemIcon>
                   <ShoppingCartIcon style={whiteColor}/>
                 </ListItemIcon>

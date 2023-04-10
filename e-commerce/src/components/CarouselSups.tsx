@@ -17,7 +17,7 @@ const CarouselSups = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 3
   };
 
@@ -43,7 +43,6 @@ const CarouselSups = () => {
           {api.map((item) => (
             <div key={item.id} className={styles.carouselDiv}>
               <img src={item.image} />
-              <p>${item.price}</p>
             </div>
           ))}
         </Slider>

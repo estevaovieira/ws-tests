@@ -197,7 +197,6 @@ function Layout({ children }: LayoutProps) {
         <DrawerHeader />
         <Typography paragraph>
           {children}
-          <p className={styles.footer}>My customer - all rights reserved - 2023</p>
         </Typography>
       </Box>
     </Box>

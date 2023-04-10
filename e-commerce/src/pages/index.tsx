@@ -77,6 +77,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <p className={styles.footer}>My customer - all rights reserved - 2023</p>
     </>
   )
 }

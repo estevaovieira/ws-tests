@@ -1,7 +1,0 @@
-{
-  "ws-test/admin-page || ws-test/e-commerce": {
-    "yarn": "dev",
-    "npm": "npm run dev"
-  }
-}
- 

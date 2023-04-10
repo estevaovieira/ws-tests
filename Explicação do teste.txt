@@ -1,0 +1,3 @@
+Para criar o aplicação do admin usei React junto com Material UI para montar o layout das páginas, usei react router dom para fazer o roteamento da aplicação e também optei por criar uma tela de Login.
+criei um CRUD para poder adicionar os produtos armazenando no LocalStorage.
+Na aplicação do e-commerce optei usar NextJs por ter mais experiência com React, foi usado também Material UI, a aplicação esta responsiva e foi consumida uma API para montar o slider de produtos.

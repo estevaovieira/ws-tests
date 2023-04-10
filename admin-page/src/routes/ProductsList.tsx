@@ -184,6 +184,6 @@ const ProductsList = () => {
       </TableContainer>
     </>
   )
-}
+};
 
 export default ProductsList

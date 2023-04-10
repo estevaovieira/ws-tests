@@ -25,6 +25,6 @@ const CompanyProfile = () => {
       <CircularProgress />
     </Box>    
   )
-}
+};
 
 export default CompanyProfile

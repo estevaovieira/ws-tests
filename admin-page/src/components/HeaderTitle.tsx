@@ -5,7 +5,7 @@ interface MyObject {
   "/": string;
   "/company-profile": string;
   [key: string]: string;
-}
+};
 
 const HeaderTitle = () => {
 
@@ -19,6 +19,6 @@ const HeaderTitle = () => {
   return (
     <h1 className={styles.title}>{headers[pathname]}</h1>
   )
-}
+};
 
 export default HeaderTitle

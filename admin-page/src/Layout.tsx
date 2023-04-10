@@ -13,7 +13,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
-import stylesComponents from './styles/stylesComponents'
+import stylesComponents from './styles/stylesComponents';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -25,8 +25,7 @@ const useStyles = makeStyles({
   routeSelect: stylesComponents.routeSelect
 });
 
-const whiteColor = {color: '#fff'};
-
+const whiteColor = { color: '#fff' };
 
 const Layout = () => {
   const classes = useStyles();
@@ -41,14 +40,14 @@ const Layout = () => {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" sx={{ width: 240, flexShrink: 0, [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box', backgroundColor: 'rgb(15, 1, 92)'}}}>
+      <Drawer variant="permanent" sx={{ width: 240, flexShrink: 0, [`& .MuiDrawer-paper`]: { width: 240, boxSizing: 'border-box', backgroundColor: 'rgb(15, 1, 92)' } }}>
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
           <List className={classes.listRoutes}>
             <ListItem disablePadding style={whiteColor}>
               <ListItemButton component={Link} to="/">
                 <ListItemIcon>
-                  <ShoppingCartIcon style={whiteColor}/>
+                  <ShoppingCartIcon style={whiteColor} />
                 </ListItemIcon>
                 <ListItemText primary="Products" />
               </ListItemButton>
@@ -56,7 +55,7 @@ const Layout = () => {
             <ListItem disablePadding style={whiteColor}>
               <ListItemButton component={Link} to="/company-profile">
                 <ListItemIcon>
-                  <AccountBoxIcon style={whiteColor}/>
+                  <AccountBoxIcon style={whiteColor} />
                 </ListItemIcon>
                 <ListItemText primary="Company profile" />
               </ListItemButton>
@@ -64,7 +63,7 @@ const Layout = () => {
             <ListItem disablePadding style={whiteColor}>
               <ListItemButton component={Link} to="/login">
                 <ListItemIcon>
-                  <LogoutIcon style={whiteColor}/>
+                  <LogoutIcon style={whiteColor} />
                 </ListItemIcon>
                 <ListItemText primary="Logout" />
               </ListItemButton>
@@ -80,6 +79,6 @@ const Layout = () => {
       </Box>
     </Box>
   );
-}
+};
 
 export default Layout

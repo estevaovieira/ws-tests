@@ -80,4 +80,4 @@ export default function Home() {
       <p className={styles.footer}>My customer - all rights reserved - 2023</p>
     </>
   )
-}
+};

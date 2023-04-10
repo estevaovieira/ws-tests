@@ -53,6 +53,6 @@ const Login = () => {
       </Button>
     </div>
   )
-}
+};
 
 export default Login

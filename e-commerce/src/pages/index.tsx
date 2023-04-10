@@ -1,8 +1,7 @@
 import CarouselSups from '@/components/CarouselSups';
+import Head from 'next/head';
 import styles from '../styles/global.module.css';
 import stylesContainer from '../styles/index.module.css';
-import Head from 'next/head';
-
 
 
 export default function Home() {
@@ -22,7 +21,7 @@ export default function Home() {
             <div className={stylesContainer.about}>
               <h1>Supplement healthy</h1>
               <p>
-                super supplement for your health and well-being,
+                Super supplement for your health and well-being,
                 natural and 100% functional, take advantage of this offer.
               </p>
             </div>
@@ -49,10 +48,10 @@ export default function Home() {
               <h2 className={stylesContainer.appleValue}>Only $0.22</h2>
               <p className={stylesContainer.appleDesc1}>
                 Healthy power pills
-                Most Healthy for u.
+                Most healthy for u.
               </p>
               <p className={stylesContainer.appleDesc2}>
-                cheap and powerful remedy
+                Cheap and powerful remedy
                 for long term healing.
               </p>
             </div>
@@ -70,7 +69,7 @@ export default function Home() {
             </div>
             <div className={stylesContainer.buttonLink}>
               <button className={stylesContainer.vaseButton2}>
-                click here and join us
+                Click here and join us
                 with these magical
                 benefits
               </button>

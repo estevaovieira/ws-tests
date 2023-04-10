@@ -26,6 +26,7 @@ import SpaIcon from '@mui/icons-material/Spa';
 import Link from 'next/link';
 import HeaderTitle from './HeaderTitle';
 import styles from '../styles/layout.module.css'
+import dynamic from "next/dynamic";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -85,24 +86,18 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: 'nowrap',
-    boxSizing: 'border-box',
+  ({ theme, open }) => ({ width: drawerWidth, flexShrink: 0, whiteSpace: 'nowrap', boxSizing: 'border-box',
     ...(open && {
       ...openedMixin(theme),
       '& .MuiDrawer-paper': openedMixin(theme),
-    }),
-    ...(!open && {
-      ...closedMixin(theme),
+    }), ...(!open && { ...closedMixin(theme), 
       '& .MuiDrawer-paper': closedMixin(theme),
     }),
   }),
 );
 
 
-export default function Layout({ children }: LayoutProps) {
+function Layout({ children }: LayoutProps) {
 
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -127,7 +122,7 @@ export default function Layout({ children }: LayoutProps) {
           <IconButton color="inherit" aria-label="open drawer" onClick={handleDrawerOpen} edge="start" sx={{ marginRight: 5, ...(open && { display: 'none' }), }}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div" style={{fontSize: '25px'}}>
             <HeaderTitle />
           </Typography>
         </Toolbar>
@@ -145,7 +140,7 @@ export default function Layout({ children }: LayoutProps) {
               <ListItemIcon sx={itemIcon}>
                 <HealthAndSafetyIcon />
               </ListItemIcon>
-              <ListItemText primary={'Healty & Care'} sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary={'Health & Care'} sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton></Link>
           </ListItem>
           <ListItem disablePadding sx={{ display: 'block' }}>
@@ -198,7 +193,7 @@ export default function Layout({ children }: LayoutProps) {
           </ListItem>
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }} style={{paddingBottom: '0', backgroundColor: '#0255a3'}}>
         <DrawerHeader />
         <Typography paragraph>
           {children}
@@ -208,3 +203,5 @@ export default function Layout({ children }: LayoutProps) {
     </Box>
   )
 }
+
+export default dynamic (() => Promise.resolve(Layout), {ssr: false})

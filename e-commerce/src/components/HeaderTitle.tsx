@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 interface MyObject {
@@ -19,7 +18,7 @@ const HeaderTitle = () => {
   const pathname = router.pathname;
 
   const headers: MyObject = {
-    "/": "Healty & Care",
+    "/": "My Products",
     "/food": "Food",
     "/pet": "Pet",
     "/hardware": "Hardware",

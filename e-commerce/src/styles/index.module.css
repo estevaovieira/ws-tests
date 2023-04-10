@@ -77,8 +77,36 @@
   background-color: #003566;
   border-radius: 10px;
   width: 100%;
-  height: 160px;
+  height: 200px;
   margin-top: 30px;
+  padding: 10px;
+}
+
+.carouselDiv {
+
+}
+
+.carouselContainer {
+  text-align: center;
+  height: 150px;
+}
+
+.carouselWrapper {
+  width: 500px;
+  height: 300px;
+  display: inline-block;
+}
+
+.carouselDiv img {
+  width: 180px;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.carouselDiv p {
+  color: #fff;
+  margin: 0;
+  text-align: center;
 }
 
 /*--------------------- Apple and Vase ---------------------*/

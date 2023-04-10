@@ -18,5 +18,15 @@
     "id": "4",
     "price": 6.88,
     "image": "https://www.sehatok.com/sites/default/files/media/images/436B0471-FD3B-4A9B-A6E5-42B107098D8C.jpg"
+  },
+  {
+    "id": "5",
+    "price": 10.00,
+    "image": "https://www.magazinenatural.com.br/img/site/1322/b/3807209.jpg"
+  },
+  {
+    "id": "6",
+    "price": 8.56,
+    "image": "https://images.tcdn.com.br/img/img_prod/1114810/vitamina_immune_d_c_e_z_600mg_60_caps_185_1_3027558c5ce749622f25cf2bf48d8aa4.png"
   }
 ]

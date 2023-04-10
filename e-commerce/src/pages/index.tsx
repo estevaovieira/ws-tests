@@ -34,7 +34,7 @@ export default function Home() {
       {/* --------------------- Carousel --------------------- */}
 
       <div className={stylesContainer.carousel}>
-        {/* <CarouselSups /> */}
+        <CarouselSups />
       </div>
 
       {/* ------------------ Apple and Vase ------------------ */}

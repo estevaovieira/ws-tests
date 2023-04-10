@@ -43,6 +43,7 @@ const CarouselSups = () => {
           {api.map((item) => (
             <div key={item.id} className={styles.carouselDiv}>
               <img src={item.image} />
+              <p>${item.price}</p>
             </div>
           ))}
         </Slider>
